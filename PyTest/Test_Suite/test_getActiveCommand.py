@@ -14,6 +14,7 @@ def test_setup():
     #global setup
     setup = include_class()
     #yield
+    #change to below code some time later
     yield from (setup, client)
     print('Test Completed')
 
