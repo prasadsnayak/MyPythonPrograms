@@ -9,12 +9,12 @@ from Lib.include_file import setup_class
 @pytest.fixture(scope="module")
 def test_setup():
     init = setup_class()
-    #global client
+    global client
     client = init.Session(init.session, init.WSDL_URL, init.proxy, init.ssl_cert, init.WSDL_USERNAME, init.WSDL_PASSWORD)
-    #global setup
+    global setup
     setup = include_class()
-    #yield
-    yield from (setup, client)
+    yield
+    #yield from (setup, client)
     print('Test Completed')
 
 def test_getActiveCommand_valid(test_setup):
